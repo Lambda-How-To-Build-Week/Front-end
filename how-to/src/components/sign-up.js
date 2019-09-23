@@ -3,6 +3,64 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import styled from 'styled-components';
 
 
+const StyledForm = styled.div `
+
+    margin-top: 8%;
+    height: 90vh;
+    color: #E76E3C;
+
+    Form{
+        border: 1px solid #E76E3C;
+        width: 70%;
+        margin: 5% auto 2% auto;
+        padding: 3rem 1rem;
+        border-radius: 5rem;
+
+        label{
+            display: block;
+            width: 80%;
+            margin: 2rem auto;
+
+            input[type = "text"], input[type = "email"], input[type = "password"]{
+                border: 1px solid #E76E3C;
+                width: 70%;
+                display: block;
+                margin: 1rem auto 2rem auto;
+                padding: 0.5rem 0;
+             }
+        }
+        
+        button{
+            width: 20%;
+            padding: 1rem;
+            background-color: #E76E3C;
+            color: white;
+        }
+        
+    }
+
+    p{
+        color: black;
+        background-color: white;
+        border: 1px solid red;
+        width: 20%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    a{
+        color: #E76E3C;
+        text-decoration: none;
+
+        &: hover{
+            text-decoration: underline;
+        }
+    }
+    
+
+`
+
+
 const initialUser = {
     name: '',
     email: '',
@@ -22,29 +80,33 @@ function SignUp(props){
         onSubmit = {addUser}
         render = {props => {
             return(
+                <StyledForm>
                 <Form>
-                    <h2>How To</h2>
+                    <h1>How To</h1>
                     <label>
                         Name
-                        <Field name = "name" type ="text" placeholder= "name"/>
+                        <Field name = "name" type ="text" />
                         <ErrorMessage name='name' component='div' />
                     </label>
                     <label>
                         Email
-                        <Field name = "email" type ="email" placeholder= "email"/>
+                        <Field name = "email" type ="email"/>
                         <ErrorMessage name='email' component='div' />
                     </label>
                     <label>
                         Username
-                        <Field name = "username" type ="text" placeholder= "username"/>
+                        <Field name = "username" type ="text" />
                         <ErrorMessage name='username' component='div' />
                     </label>
                     <label>
                         password
-                        <Field name = "password" type ="text" placeholder= "password"/>
+                        <Field name = "password" type ="password" />
                         <ErrorMessage name='password' component='div' />
                     </label>
+                    <button>Sign Up!</button>
                 </Form>
+                <p>Have an account? <a href ="#">Log In</a> </p>
+                </StyledForm>
             )
 
         }}/>
