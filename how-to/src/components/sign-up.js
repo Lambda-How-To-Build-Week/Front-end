@@ -15,6 +15,22 @@ const StyledForm = styled.div `
         margin: 5% auto 2% auto;
         padding: 3rem 1rem;
         border-radius: 5rem;
+        
+        
+
+        Form::before{
+        background-image: url('https://avatars1.githubusercontent.com/u/44746253?s=400&v=4');
+        background-size: cover;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        opacity: 0.4;
+      }
 
         label{
             display: block;
@@ -56,8 +72,9 @@ const StyledForm = styled.div `
             text-decoration: underline;
         }
     }
-    
 
+
+    
 `
 
 
