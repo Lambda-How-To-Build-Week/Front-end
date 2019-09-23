@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import styled from 'styled-components';
 
 
 const initialUser = {
@@ -22,7 +23,7 @@ function SignUp(props){
         render = {props => {
             return(
                 <Form>
-                    <h2>How T0</h2>
+                    <h2>How To</h2>
                     <label>
                         Name
                         <Field name = "name" type ="text" placeholder= "name"/>
@@ -53,3 +54,6 @@ function SignUp(props){
 
 
 }
+
+
+export default SignUp;
