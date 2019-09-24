@@ -10,7 +10,7 @@ export const LOGIN_FAILURE = "LOGIN_FAILURE";
 export const login = (username, password) => dispatch => {
   dispatch({ type: LOGIN_START });
   return axiosWithAuth()
-    .post(`IDK YET`, {
+    .post(`https://backend-v1.herokuapp.com/api/users/login`, {
       username: username,
       password: password
     })
@@ -34,7 +34,7 @@ export const REGISTRATION_FAILURE = "REGISTRATION_FAILURE";
 export const addUser = user => dispatch => {
   dispatch({ type: REGISTRATION_START });
   axios
-    .post(`IDK YET`, {
+    .post(`https://backend-v1.herokuapp.com/api/users/register`, {
       username: user.username,
       password: user.password
     })
