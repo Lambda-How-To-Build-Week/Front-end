@@ -17,7 +17,12 @@ const initialState = {
   error: "",
   fetchingData: false,
   users: [],
-  addUser: []
+  addUser: [],
+  isLoadingLOGIN: false,
+  successLOGIN: false,
+  username: "",
+  password: "",
+  data: []
 };
 
 export const registrationReducer = (state = initialState, action) => {
@@ -49,13 +54,6 @@ export const registrationReducer = (state = initialState, action) => {
 
 //LOGIN
 
-const initialState = {
-  isLoadingLOGIN: false,
-  successLOGIN: false,
-  username: "",
-  password: ""
-};
-
 export const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_START:
@@ -86,12 +84,6 @@ export const loginReducer = (state = initialState, action) => {
 };
 
 // FETCHING / NEW TUTORIAL
-
-export const initialState = {
-  data: [],
-  error: "",
-  fetchingData: false
-};
 
 export const itemReducer = (state = initialState, action) => {
   switch (action.type) {
