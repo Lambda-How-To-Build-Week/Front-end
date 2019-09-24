@@ -1,20 +1,82 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import '../App.css';
+import NewTutorialForm from './new-tutorial';
 // import SearchForm from './seach-form';
 import posts from '../data';
+import styled from 'styled-components';
+
+const StyledArticle = styled.div`
+
+    .articles-list-wrapper {
+        margin-top: 75px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .article-card {
+        width: 250px;
+        margin: 0 10px 32px;
+    }
+    
+    .article-card p {
+        margin: 0 0 4px;
+        text-align: left;
+        color: #595959;
+    }
+    
+    .article-list-image {
+        width: 100%;
+        border: 1px solid lightgray;
+    }
+    
+    .articles-header{
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+    }
+    
+    .articles-button {
+        display:flex;
+        flex-direction:row;
+        justify-content:flex-end;
+        align-content:flex-end;
+        flex-wrap:wrap;
+        margin-right:25px;
+    }
+  
+    .articles-button .md-button {
+        margin: 0 8px;
+        margin-right:20px;
+        border: none;
+        border-radius: 2px;
+        padding: 0 16px;
+        min-width: 64px;
+        height: 36px;
+        vertical-align: middle;
+        text-align: center;
+        text-overflow: ellipsis;
+        font-size:1.3rem;
+        font-weight:bold;
+        color: #fff;
+        background-color: #e76e3c;
+    }
+`;
 
 
 function Articles() {
 
     return (
-        <div className='articles-wrapper'>
+        <StyledArticle className='articles-wrapper'>
             <div className='articles-header'>
                 <h1>Suggested Articles</h1>
             </div>
-            <div className='articles-button'>
+            <Link to='/new-tutorial' className='articles-button'>
                 <button onClick className="md-button new-tutorial-button">Make a New Tutorial</button>
-            </div>
+            </Link>
+            <Route path='/new-tutorial' component={NewTutorialForm}/>
         <div className='articles-list-wrapper'>
            {posts.map(post => (
                <div className='article-card' key={post.id}>
@@ -28,7 +90,7 @@ function Articles() {
                </div>
            ))}
             </div>
-        </div>
+        </StyledArticle>
     );
 }
 
