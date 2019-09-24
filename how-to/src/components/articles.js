@@ -20,18 +20,18 @@ function Articles(props) {
             <div className='articles-button'>
                 <button onClick className="md-button new-tutorial-button">Make a New Tutorial</button>
             </div>
-            <div className='articles-list-wrapper'>
-            {posts.map(post => (
-                <div className='article-card' key={post.id}>
-                    <Link to={`/articles/${post.id}`}>
-                    <img className='article-list-image'
-                    src={post.imageUrl}
-                    alt={post.title}/>
-                    <p>{post.title}</p>
-                    </Link>
-                    <p>{post.summary}</p>
-                </div>
-            ))}
+        <div className='articles-list-wrapper'>
+           {posts.map(post => (
+               <div className='article-card' key={post.id}>
+                   <Link to={`/articles/${post.id}`}>
+                   <img className='article-list-image'
+                   src={post.imageUrl}
+                   alt={post.title}/>
+                   <p>{post.title}</p>
+                   </Link>
+                   <p>{post.summary}</p>
+               </div>
+           ))}
             </div>
         </div>
     );

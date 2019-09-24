@@ -69,11 +69,14 @@
   flex-direction:row;
   justify-content:flex-end;
   align-content:flex-end;
+  flex-wrap:wrap;
 }
 
-.new-tutorial-button.md-button {
+
+
+.articles-button .md-button {
   margin: 0 8px;
-  margin-right:10px;
+  margin-right:20px;
   border: none;
   border-radius: 2px;
   padding: 0 16px;
