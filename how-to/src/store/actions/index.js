@@ -27,6 +27,8 @@ export const login = (username, password) => dispatch => {
     });
 };
 
+//Registration Action
+
 export const REGISTRATION_START = "REGISTRATION_START";
 export const REGISTRATION_SUCCESS = "REGISTRATION_SUCCESS";
 export const REGISTRATION_FAILURE = "REGISTRATION_FAILURE";
