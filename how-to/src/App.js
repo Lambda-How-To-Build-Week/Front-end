@@ -20,7 +20,7 @@ function App() {
       </nav>
       <Route exact path='/' component={SignUp}/>
       <Route exact path='/articles' render={props => ( <Articles {...props} articles={items}/>)} />
-     <SignUp/>
+      {/* <SignUp/> Took this out -- made it the Home link */}
     </div>
   );
 }
