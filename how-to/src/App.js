@@ -4,7 +4,7 @@ import { Route, Link } from 'react-router-dom';
 import './App.css';
 import SignUp from "./components/sign-up";
 
-import home from './components/home';
+import Articles from './components/articles';
 import data from './data';
 
 function App() {
@@ -15,9 +15,11 @@ function App() {
         <h1 className='app-header'></h1>
         <div className='nav-links'>
           <Link to='/'>Home</Link>
+          <Link to='/articles'>Articles</Link>
         </div>
       </nav>
-      <Route exact path='/' render={props => ( <home {...props} articles={items}/>)} />
+      <Route exact path='/' component={SignUp}/>
+      <Route exact path='/articles' render={props => ( <Articles {...props} articles={items}/>)} />
      <SignUp/>
     </div>
   );

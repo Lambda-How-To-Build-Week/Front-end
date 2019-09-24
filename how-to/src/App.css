@@ -20,3 +20,54 @@
 .App-link {
   color: #09d3ac;
 }
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #e76e3c;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.nav-links a:last-of-type {
+  margin-right: 0;
+}
+
+.store-header {
+  color: #1c5d76;
+}
+
+.articles-list-wrapper {
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.article-card {
+  width: 250px;
+  margin: 0 10px 32px;
+  cursor: pointer;
+}
+
+.article-card p {
+  margin: 0 0 4px;
+  text-align: left;
+  color: #595959;
+}
+
+.article-list-image {
+  width: 100%;
+  border: 1px solid lightgray;
+}
+
+
+
+
+
+
+
