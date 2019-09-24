@@ -76,6 +76,9 @@ class NewTutorialForm extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <button type="submit" onClick={this.handleSubmit}>
+            Add Tutorial
+          </button>
         </div>
       </form>
     );
