@@ -17,13 +17,13 @@
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
-}
-
 .nav-links {
   display: flex;
-  justify-content: space-between;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items:center;
+  margin-top:15px;
+  margin-left:25px;
 }
 
 .nav-links a {
@@ -33,16 +33,8 @@
   margin-right: 8px;
 }
 
-.nav-links a:last-of-type {
-  margin-right: 0;
-}
-
-.store-header {
-  color: #1c5d76;
-}
-
 .articles-list-wrapper {
-  margin-top: 36px;
+  margin-top: 75px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -63,6 +55,37 @@
 .article-list-image {
   width: 100%;
   border: 1px solid lightgray;
+}
+
+.articles-header{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+}
+
+.articles-button {
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-end;
+  align-content:flex-end;
+}
+
+.new-tutorial-button.md-button {
+  margin: 0 8px;
+  margin-right:10px;
+  border: none;
+  border-radius: 2px;
+  padding: 0 16px;
+  min-width: 64px;
+  height: 36px;
+  vertical-align: middle;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-size:1.3rem;
+  font-weight:bold;
+  color: #fff;
+  background-color: #e76e3c;
 }
 
 

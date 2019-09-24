@@ -35,4 +35,4 @@ export default [
         imageUrl:'https://unsplash.com/photos/o54RjF-C7xo',
         summary:'Building your own furniture is a satisfying experience and a fun project to share with your family...'
     }
-]
+];

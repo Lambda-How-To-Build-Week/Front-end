@@ -9,8 +9,7 @@ function App() {
   const [items] = useState(data);
   return (
     <div className="App">
-      <nav>
-        <h1 className="app-header"></h1>
+      <nav> 
         <div className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/articles">Articles</Link>
