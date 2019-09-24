@@ -9,7 +9,6 @@ function App() {
   const [items] = useState(data);
   return (
     <div className="App">
-      <SignUp />
       <nav>
         <h1 className="app-header"></h1>
         <div className="nav-links">
