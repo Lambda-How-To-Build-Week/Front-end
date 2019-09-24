@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  margin-top: 3%;
+  height: 80vh;
+  color: #E76E3C;
 }
 
 .App-logo {
@@ -22,16 +25,17 @@
   flex-direction:row;
   justify-content: flex-start;
   align-items:center;
-  margin-top:15px;
-  margin-left:25px;
+  /* margin-top:25px; */
+  margin-left:45px;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #e76e3c;
   font-weight: bold;
-  margin-right: 8px;
+  margin-right: 45px;
 }
+
 
 .articles-list-wrapper {
   margin-top: 75px;
@@ -43,7 +47,6 @@
 .article-card {
   width: 250px;
   margin: 0 10px 32px;
-  cursor: pointer;
 }
 
 .article-card p {
@@ -70,6 +73,7 @@
   justify-content:flex-end;
   align-content:flex-end;
   flex-wrap:wrap;
+  margin-right:25px;
 }
 
 
@@ -91,6 +95,14 @@
   background-color: #e76e3c;
 }
 
+a{
+  text-decoration:none;
+  font-weight:bold;
+}
+
+h2,h3,h4{
+  color:#4098db;
+}
 
 
 

@@ -1,16 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+// import SearchForm from './seach-form';
 import posts from '../data';
 
 
-function Articles(props) {
-
-    const routeToTutorial = event => {
-        event.preventDefault();
-        props.history.push('/');
-    }
-   
+function Articles() {
 
     return (
         <div className='articles-wrapper'>
@@ -26,8 +21,8 @@ function Articles(props) {
                    <Link to={`/articles/${post.id}`}>
                    <img className='article-list-image'
                    src={post.imageUrl}
-                   alt={post.title}/>
-                   <p>{post.title}</p>
+                   alt={post.alt}/>
+                   <h3>{post.title}</h3>
                    </Link>
                    <p>{post.summary}</p>
                </div>
