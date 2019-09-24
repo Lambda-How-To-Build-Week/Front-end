@@ -4,6 +4,7 @@ import "./App.css";
 import SignUp from "./components/sign-up";
 import Articles from "./components/articles";
 import data from "./data";
+import LogInPage from "./components/logIn-page"
 
 function App() {
   const [items] = useState(data);
@@ -17,6 +18,7 @@ function App() {
         </div>
       </nav>
       <Route exact path="/" component={SignUp} />
+      <Route exact path="/login" component={LogInPage} />
       <Route
         exact
         path="/articles"
