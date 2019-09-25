@@ -40,14 +40,14 @@ const StyledForm = styled.div`
         opacity: 0.4;	
       }
 
-        input[type="text"],	        
-        input[type="email"],	        
-        input[type="password"] {	
-        border: 1px solid #e76e3c;	
-        width: 70%;	
-        display: block;	        
-        margin: 1rem auto 2rem auto;	        
-        padding: 0.5rem 0;
+      input[type="text"],	        
+      input[type="email"],	        
+      input[type="password"] {	
+      border: 1px solid #e76e3c;	
+      width: 70%;	
+      display: block;	        
+      margin: 1rem auto 2rem auto;	        
+      padding: 0.5rem 0;
     }
 
     label {
@@ -107,18 +107,18 @@ function SignUp(props) {
                 <Field name="name" type="text" />
                 <ErrorMessage name="name" component="div" />
               </label>
-              <label>
+              {/* <label>
                 Email
                 <Field name="email" type="email" />
                 <ErrorMessage name="email" component="div" />
-              </label>
+              </label> */}
               <label>
                 Username
                 <Field name="username" type="text" />
                 <ErrorMessage name="username" component="div" />
               </label>
               <label>
-                password
+                Password
                 <Field name="password" type="password" />
                 <ErrorMessage name="password" component="div" />
               </label>
