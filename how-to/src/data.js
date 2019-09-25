@@ -4,15 +4,15 @@ export default [
         id:0,
         imageUrl:'https://images.unsplash.com/photo-1568198473832-b6b0f46328c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=992&q=80',
         summary: 'There are a few simple tricks to taking a good picture; light, composition, and...',
-        alt:'Photo by 郭 心 宇 on Unsplash https://unsplash.com/@viagalactica'
+        alt:'Photo by 郭 心 宇 on Unsplash https://unsplash.com/@viagalactica',
     },
+
     {
-        title: 'How to Trim Your Cat\'s Nails',
+        title:'How to Build a Table',
         id:1,
-        imageUrl:'https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1101&q=80',
-        summary:'Most cats do not enjoy having their paws handled, let alone their nails trimmed, but here are a few ways to make the process better...',
-        alt: 'Photo by Mikhail Vasilyev on Unsplash https://unsplash.com/photos/@miklevasilyev'
-        
+        imageUrl:'https://images.unsplash.com/photo-1547609434-b732edfee020?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1927&q=80',
+        summary:'Building your own furniture is a satisfying experience and a fun project to share with your family...',
+        alt: 'Photo by Andrew Ruiz on Unsplash https://unsplash.com/photos/@andrewruiz'
     },
 
     {
@@ -39,11 +39,15 @@ export default [
         alt: 'Photo by Petr Urbanek on Unsplash https://unsplash.com/photos/@r4o4'
     },
 
+
     {
-        title:'How to Build a Table',
+        title: 'How to Trim Your Cat\'s Nails',
         id:5,
-        imageUrl:'https://images.unsplash.com/photo-1547609434-b732edfee020?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1927&q=80',
-        summary:'Building your own furniture is a satisfying experience and a fun project to share with your family...',
-        alt: 'Photo by Andrew Ruiz on Unsplash https://unsplash.com/photos/@andrewruiz'
-    }
+        imageUrl:'https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1101&q=80',
+        summary:'Most cats do not enjoy having their paws handled, let alone their nails trimmed, but here are a few ways to make the process better...',
+        alt: 'Photo by Mikhail Vasilyev on Unsplash https://unsplash.com/photos/@miklevasilyev'
+        
+    },
+
+  
 ];

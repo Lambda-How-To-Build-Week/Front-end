@@ -14,7 +14,7 @@ function App() {
         <div className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/articles">Articles</Link>
-          <Link to="/log-in"> Log In</Link>
+          <Link to="/login"> Log In</Link>
         </div>
       </nav>
       <Route exact path="/" component={SignUp} />
@@ -23,7 +23,7 @@ function App() {
         path="/articles"
         render={props => <Articles {...props} articles={items} />}
       />
-      <Route exact path="/log-in" component={LogIn}/>
+      <Route exact path="/login" component={LogIn}/>
       {/* <SignUp/> Took this out -- made it the Home link */}
     </div>
   );
