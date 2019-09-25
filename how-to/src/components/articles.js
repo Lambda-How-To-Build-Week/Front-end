@@ -2,22 +2,11 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import '../App.css';
 import NewTutorialForm from './new-tutorial';
-import SearchForm from './search-form';
 import posts from '../data';
 import styled from 'styled-components';
 
 
 const StyledArticle = styled.div`
-
-    .search-form{
-        display:flex;
-        flex-direction:row;
-        justify-content:flex-end;
-        align-content:flex-end;
-        flex-wrap:wrap;
-        margin-top:10px;
-        margin-right:50px;
-    }
 
     .articles-list-wrapper {
         margin-top: 75px;
@@ -87,7 +76,6 @@ function Articles() {
     return (
         
         <StyledArticle className='articles-wrapper'>
-            <div className='search-wrapper'><SearchForm/></div>
             <div className='articles-header'>
                 <h1>Suggested Articles</h1>
             </div>

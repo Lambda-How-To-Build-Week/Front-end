@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Route, Link } from "react-router-dom";
 import "./App.css";
 import SignUp from "./components/sign-up";
+import SearchForm from './components/search-form';
 import Articles from "./components/articles";
 import LogInPage from './components/logIn-page';
 import data from "./data";
-import LogInPage from "./components/logIn-page"
 
 function App() {
   const [items] = useState(data);
@@ -16,6 +16,7 @@ function App() {
           <Link to="/">Home</Link>
           <Link to="/articles">Articles</Link>
           <Link to="/login"> Log In</Link>
+          <SearchForm/>
         </div>
       </nav>
       <Route exact path="/" component={SignUp} />
@@ -25,7 +26,6 @@ function App() {
         path="/articles"
         render={props => <Articles {...props} articles={items} />}
       />
-      <Route exact path="/login" component={LogInPage}/>
       {/* <SignUp/> Took this out -- made it the Home link */}
     </div>
   );
