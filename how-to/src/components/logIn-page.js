@@ -1,7 +1,8 @@
 import React from "react";
 import LogIn from "./logIn-form";
 import styled from "styled-components";
-import login from "../store/actions/index";
+import { login } from "../store/actions/index";
+import { connect } from "react-redux";
 
 const StyledDiv = styled.div`
 
@@ -74,6 +75,12 @@ function LogInPage(props) {
     </StyledDiv>
   );
 }
+
+const mapStateToProps = state => ({
+  error: state.error,
+  addUser: state.addUser,
+  fetchingData: state.fetchingData
+});
 
 export default connect(
   mapStateToProps,
