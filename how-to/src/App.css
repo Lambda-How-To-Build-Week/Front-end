@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  margin-top: 3%;
+  height: 80vh;
+  color: #E76E3C;
 }
 
 .App-logo {
@@ -17,54 +20,33 @@
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
-}
-
 .nav-links {
   display: flex;
-  justify-content: space-between;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items:center;
+  margin-left:45px;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #e76e3c;
   font-weight: bold;
-  margin-right: 8px;
+  margin-right: 45px;
 }
 
-.nav-links a:last-of-type {
-  margin-right: 0;
+a{
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.store-header {
-  color: #1c5d76;
+a:hover{
+  color:#4098db;
 }
 
-.articles-list-wrapper {
-  margin-top: 36px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+h2,h3,h4{
+  color:#4098db;
 }
-
-.article-card {
-  width: 250px;
-  margin: 0 10px 32px;
-  cursor: pointer;
-}
-
-.article-card p {
-  margin: 0 0 4px;
-  text-align: left;
-  color: #595959;
-}
-
-.article-list-image {
-  width: 100%;
-  border: 1px solid lightgray;
-}
-
 
 
 

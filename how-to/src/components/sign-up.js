@@ -7,6 +7,7 @@ import LogInPage from "./logIn-page";
 import { addUser } from "../store/actions/index";
 
 const StyledForm = styled.div`
+
   label {
     display: block;
     width: 80%;
