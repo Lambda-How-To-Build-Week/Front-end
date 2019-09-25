@@ -3,6 +3,7 @@ import { Route, Link } from "react-router-dom";
 import "./App.css";
 import SignUp from "./components/sign-up";
 import Articles from "./components/articles";
+import LogIn from './components/logIn-form';
 import data from "./data";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <div className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/articles">Articles</Link>
+          <Link to="/log-in"> Log In</Link>
         </div>
       </nav>
       <Route exact path="/" component={SignUp} />
@@ -21,6 +23,7 @@ function App() {
         path="/articles"
         render={props => <Articles {...props} articles={items} />}
       />
+      <Route exact path="/log-in" component={LogIn}/>
       {/* <SignUp/> Took this out -- made it the Home link */}
     </div>
   );
