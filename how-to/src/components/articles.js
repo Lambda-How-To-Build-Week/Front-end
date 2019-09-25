@@ -74,7 +74,9 @@ const StyledArticle = styled.div`
 function Articles() {
 
     return (
+        
         <StyledArticle className='articles-wrapper'>
+            <SearchForm/>
             <div className='articles-header'>
                 <h1>Suggested Articles</h1>
             </div>
@@ -95,7 +97,9 @@ function Articles() {
                </div>
            ))}
             </div>
+            
         </StyledArticle>
+        
     );
 }
 
