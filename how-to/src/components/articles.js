@@ -1,9 +1,14 @@
+// import React, { useState } from 'react';
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
 import '../App.css';
-import NewTutorialForm from './new-tutorial';
 import posts from '../data';
 import styled from 'styled-components';
+import { Route, Link } from 'react-router-dom';
+import NewTutorialForm from './new-tutorial';
+// import SearchForm from './search-form';
+// import LogInPage from './logIn-page';
+// import SignUp from './sign-up'
+
 
 
 const StyledArticle = styled.div`
@@ -70,12 +75,22 @@ const StyledArticle = styled.div`
       }
 `;
 
-
 function Articles() {
-
+    // const [items] = useState(posts);
     return (
         
         <StyledArticle className='articles-wrapper'>
+            {/* <nav> 
+                <div className="nav-links">
+                    <Link to="/">Home</Link>
+                    <Link to="/articles">Articles</Link>
+                    <Link to="/login"> Log In</Link>
+                    <SearchForm/>
+                </div>
+            </nav>
+            <Route exact path="/" component={SignUp} />
+            <Route exact path="/login" component={LogInPage} />
+            <Route exact path="/articles" render={props => <Articles {...props} articles={items} />}/> */}
             <div className='articles-header'>
                 <h1>Suggested Articles</h1>
             </div>
