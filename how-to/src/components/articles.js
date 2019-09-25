@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import '../App.css';
 import NewTutorialForm from './new-tutorial';
-// import SearchForm from './seach-form';
+import SearchForm from './seach-form';
 import posts from '../data';
 import styled from 'styled-components';
 
