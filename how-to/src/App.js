@@ -8,6 +8,7 @@ import LogInPage from "./components/logIn-page";
 import data from "./data";
 import NewTutorialForm from "./components/new-tutorial";
 import LogIn from "./components/logIn-form";
+import MyItems from "./components/finished-tutorial";
 
 function App() {
   const [items] = useState(data);
@@ -24,7 +25,7 @@ function App() {
         </nav>
       </div>
       <Route exact path="/" component={SignUp} />
-
+      <Route exact path="/finished-tutorial" component={MyItems} />
       <Route exact path="/new-tutorial" component={NewTutorialForm} />
       <Route
         exact

@@ -22,7 +22,7 @@ class NewTutorialForm extends Component {
       steps: "",
       tags: ""
     });
-    this.props.history.push("");
+    this.props.history.push("/finished-tutorial");
   };
   handleChange = event => {
     event.preventDefault();
