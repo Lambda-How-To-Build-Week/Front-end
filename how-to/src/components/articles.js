@@ -1,13 +1,11 @@
 // import React, { useState } from 'react';
 import React from 'react';
 import '../App.css';
-import posts from '../data';
+import data from '../data';
 import styled from 'styled-components';
 import { Route, Link } from 'react-router-dom';
 import NewTutorialForm from './new-tutorial';
-// import SearchForm from './search-form';
-// import LogInPage from './logIn-page';
-// import SignUp from './sign-up'
+import SearchBar from './search-bar';
 
 
 
@@ -76,22 +74,13 @@ const StyledArticle = styled.div`
 `;
 
 function Articles() {
-    // const [items] = useState(posts);
+
     return (
         
         <StyledArticle className='articles-wrapper'>
-            {/* <nav> 
-                <div className="nav-links">
-                    <Link to="/">Home</Link>
-                    <Link to="/articles">Articles</Link>
-                    <Link to="/login"> Log In</Link>
-                    <SearchForm/>
-                </div>
-            </nav>
-            <Route exact path="/" component={SignUp} />
-            <Route exact path="/login" component={LogInPage} />
-            <Route exact path="/articles" render={props => <Articles {...props} articles={items} />}/> */}
+            
             <div className='articles-header'>
+                
                 <h1>Suggested Articles</h1>
             </div>
             <Link to='/new-tutorial' className='articles-button'>
@@ -99,7 +88,7 @@ function Articles() {
             </Link>
             <Route path='/new-tutorial' component={NewTutorialForm}/>
         <div className='articles-list-wrapper'>
-           {posts.map(post => (
+           {data.map(post => (
                <div className='article-card' key={post.id}>
                    <Link to={`/articles/${post.id}`}>
                    <img className='article-list-image'
@@ -111,7 +100,7 @@ function Articles() {
                </div>
            ))}
             </div>
-            
+            <SearchBar/>
         </StyledArticle>
         
     );

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Route, Link } from "react-router-dom";
 import "./App.css";
-import SearchForm from './components/search-form';
+// import SearchBar from './components/search-bar';
 import SignUp from "./components/sign-up";
 import Articles from "./components/articles";
 import LogInPage from './components/logIn-page';
@@ -17,7 +17,7 @@ function App() {
             <Link to="/">Home</Link>
             <Link to="/articles">Articles</Link>
             <Link to="/login"> Log In</Link>
-            <SearchForm/>
+            {/* <SearchBar/> */}
           </div>
             
         </nav>
