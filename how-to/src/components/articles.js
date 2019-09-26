@@ -32,9 +32,7 @@ const StyledArticle = styled.div`
     }
 
     .articles-list-wrapper {
-        // margin-top: 75px;
-        // display: flex;
-        // justify-content: center;
+        border: 1px solid red;
         width: 80%;
         margin: 0 auto;
         display: flex;

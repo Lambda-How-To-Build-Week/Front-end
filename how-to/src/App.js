@@ -45,7 +45,6 @@ function App() {
       <Route path = "/login" component = {LogInPage}/>
       <Route exact path="/" component={SignUp} />
       <Route exact path="/finished-tutorial" component={MyItems} />
-      <Route exact path="/new-tutorial" component={NewTutorialForm} />
       <Route
         exact
         path="/articles"

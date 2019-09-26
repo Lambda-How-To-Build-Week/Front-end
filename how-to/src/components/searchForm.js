@@ -25,6 +25,7 @@ const StyledSection = styled.section `
 function Find (props) {
     const {search, validationSchema} = props;
 
+
     return (
         <Formik 
             validationSchema={validationSchema}
