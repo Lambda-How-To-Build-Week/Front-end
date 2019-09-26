@@ -7,7 +7,7 @@ const axiosWithAuth = () => {
     headers: {
       Authorization: token
     },
-    baseURL: "IDK YET"
+    baseURL: "https://backend-v1.herokuapp.com/"
   });
 };
 export default axiosWithAuth;

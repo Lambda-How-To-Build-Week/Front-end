@@ -10,21 +10,15 @@ class MyItems extends Component {
     this.props.fetchItem();
   }
   render() {
+    console.log(this.props);
     return (
       <div className="finished-tutorial-page">
-        <div>
-          <NavLink to="/add">
-            <button>Add Item</button>
-          </NavLink>
-          <NavLink to="/protected">
-            <button>Back</button>
-          </NavLink>
-        </div>
-        <h1>My Items</h1>
+        <h1>My Tutorials</h1>
         <div className="cards-container">
-          {this.props.data.map(data => (
-            <NewTutorialForm key={data.id} data={data} />
-          ))}
+          {this.props.data &&
+            this.props.data.map(data => (
+              <NewTutorialForm key={data.id} data={data} />
+            ))}
         </div>
       </div>
     );
@@ -32,26 +26,11 @@ class MyItems extends Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.itemReducer.data,
-  fetching: state.itemReducer.fetching,
-  error: state.itemReducer.error
+  data: state.data,
+  fetching: state.fetching,
+  error: state.error
 });
 export default connect(
   mapStateToProps,
   { fetchItem }
 )(MyItems);
-// import React from "react";
-
-// const ItemCard = props => {
-//   console.log(props.data.id);
-//   return (
-//     <div className="tutorial-card">
-//       <h2>{props.data.tutorial}</h2>
-//       <p>Description : {props.data.description}</p>
-//       <p>Steps : ${props.data.steps}</p>
-//       <p>Tags : {props.data.tags}</p>
-//     </div>
-//   );
-// };
-
-// export default ItemCard;

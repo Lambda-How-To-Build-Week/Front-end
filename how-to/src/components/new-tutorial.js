@@ -55,9 +55,7 @@ class NewTutorialForm extends Component {
             />
           </div>
           <div className="add-input">
-            <h3>
-              Now add your steps to completing this Tutorial, Step 1 goes here!
-            </h3>
+            <h3>Now add your steps to completing this Tutorial!</h3>
             <input
               type="text"
               value={this.state.steps}
@@ -66,7 +64,7 @@ class NewTutorialForm extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className="add-input">
+          {/* <div className="add-input">
             <h3>Step 2, lets hear it!</h3>
             <input
               type="text"
@@ -105,7 +103,7 @@ class NewTutorialForm extends Component {
               placeholder="Step 5..."
               onChange={this.handleChange}
             />
-          </div>
+          </div> */}
           <div className="add-input">
             <h3>
               Please provide some tags to shine some light on your awesome
