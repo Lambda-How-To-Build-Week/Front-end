@@ -1,13 +1,11 @@
-// import React, { useState } from 'react';
-import React from 'react';
+
+// import { Route, Link } from "react-router-dom";
 import '../App.css';
-import data from '../data';
 import styled from 'styled-components';
-import { Route, Link } from 'react-router-dom';
-import NewTutorialForm from './new-tutorial';
-import SearchBar from './search-bar';
-
-
+// import SearchBar from './search-bar';
+// import NewTutorialForm from './new-tutorial';
+import React, { useState } from 'react';
+import data from '../data';
 
 const StyledArticle = styled.div`
 
@@ -73,37 +71,41 @@ const StyledArticle = styled.div`
       }
 `;
 
-function Articles() {
+
+
+function Articles () {
+//    const [articles] = useState(data)
+
+//call filter before map
 
     return (
-        
-        <StyledArticle className='articles-wrapper'>
-            
+        <div className='articles-wrapper'>
             <div className='articles-header'>
-                
                 <h1>Suggested Articles</h1>
+                {/* <SearchBar/> */}
             </div>
-            <Link to='/new-tutorial' className='articles-button'>
+
+            {/* <Link to='/new-tutorial' className='articles-button'>
                 <button onClick className="md-button new-tutorial-button">Make a New Tutorial</button>
-            </Link>
-            <Route path='/new-tutorial' component={NewTutorialForm}/>
-        <div className='articles-list-wrapper'>
-           {data.map(post => (
+            </Link> */}
+            {/* <Route path='/new-tutorial' component={NewTutorialForm}/> */}
+            <StyledArticle>
+            <div className='articles-list-wrapper'></div>
+            {data.map(post => (
                <div className='article-card' key={post.id}>
-                   <Link to={`/articles/${post.id}`}>
+                   <h2>{post.title}</h2>
                    <img className='article-list-image'
                    src={post.imageUrl}
                    alt={post.alt}/>
                    <h3>{post.title}</h3>
-                   </Link>
                    <p>{post.summary}</p>
                </div>
            ))}
-            </div>
-            <SearchBar/>
+           
         </StyledArticle>
-        
+        </div>
     );
+            
 }
 
 export default Articles;

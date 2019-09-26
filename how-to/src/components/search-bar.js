@@ -1,31 +1,33 @@
-import React, { Component } from 'react';
-import Articles from './articles';
-import data from '../data';
+import React, {Component} from 'react';
 
-class SearchBar extends Component {
-    constructor() {
-        super();
-        this.state = {
-            search: ''
-        };
+export default function SearchBar(props) {
+    const [searchQuery,setSearch] = useState('');
+    const doSearch = (e) => {
+        e.preventDefault()
+        props.search(searchQuery)
     }
-
-    updateSearch = (event) => {
-        this.setState({search: event.target.value})
-    }
-    render() {
-        let filteredSearch = this.props.data;
-        return (
-            <div>
-                <ul>
-                    {filteredSearch.map((post)=> {
-                        return <p> post={post} key={post.id}</p> 
-                    })}
-                </ul>
-                <input type='text' value={this.state.search} onChange={this.updateSearch}/>
-            </div>
-        )
-    }
+    return (
+        <form onSubmit={e => doSearch(e)} className='search-form'>
+            <label htmlFor='data-search-form'>Search: </label>
+            <input id='data-search-form' type='text' name='data.title' onChange={(e) => setSearch(e.target.value)}/>
+        </form>
+    );
 }
+Collapse
 
-export default SearchBar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
