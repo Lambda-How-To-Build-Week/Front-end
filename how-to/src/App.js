@@ -7,6 +7,7 @@ import Articles from "./components/articles";
 import LogInPage from './components/logIn-page';
 import data from "./data";
 import Find from "./components/searchForm";
+import NewTutorialForm from "./components/new-tutorial"
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
         path="/articles"
         render={props => <Articles {...props} articles={items} />}
       />
+      <Route path='/new-tutorial' component={NewTutorialForm}/>
       <Route path='/articles' 
         render={props => <Find
         {...props} 

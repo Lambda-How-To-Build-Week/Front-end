@@ -28,6 +28,10 @@ const StyledDiv = styled.div`
             width: 30%;
             height: 70%;
 
+            @media only screen and (max-width: 1000px){
+              height: 50%;
+            }
+
 
             img{
                 height: 100%;

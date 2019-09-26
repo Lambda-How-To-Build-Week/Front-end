@@ -4,7 +4,7 @@ import '../App.css';
 import NewTutorialForm from './new-tutorial';
 import posts from '../data';
 import styled from 'styled-components';
-import Find from "./searchForm"
+import Find from "./searchForm";
 
 
 const StyledArticle = styled.div`
@@ -108,7 +108,7 @@ function Articles() {
             <Link to='/new-tutorial' className='articles-button'>
                 <button onClick className="md-button new-tutorial-button">Make a New Tutorial</button>
             </Link>
-            <Route path='/new-tutorial' component={NewTutorialForm}/>
+            {/* <Route path='/new-tutorial' component={NewTutorialForm}/> */}
         <div className='articles-list-wrapper'>
            {posts.map(post => (
                <div className='article-card' key={post.id}>
