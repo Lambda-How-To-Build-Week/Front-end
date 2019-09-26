@@ -68,10 +68,11 @@ const StyledArticle = styled.div`
     
     
     .articles-button {
-       padding: 1rem;
+       padding: 1rem 2rem;
        postion: relative;
        display: flex;
-       justify-content:flex-end;
+       justify-content:space-between;
+       align-items: center;
 
     }
   
@@ -91,32 +92,22 @@ const StyledArticle = styled.div`
 
 
 function Articles(props) {
-  // const [items] = useState(posts);
   return (
     <StyledArticle className="articles-wrapper">
       <div className = "nav">
           <h2> How-to</h2>
-          <SearchForm search = {props.search}/>
       </div>
-      {/* <nav> 
-                <div className="nav-links">
-                    <Link to="/">Home</Link>
-                    <Link to="/articles">Articles</Link>
-                    <Link to="/login"> Log In</Link>
-                    <SearchForm/>
-                </div>
-            </nav>
-            <Route exact path="/" component={SignUp} />
-            <Route exact path="/login" component={LogInPage} />
-            <Route exact path="/articles" render={props => <Articles {...props} articles={items} />}/> */}
       <div className="articles-header">
         <h1>Suggested Articles</h1>
       </div>
-      <Link to="/new-tutorial" className="articles-button">
+      <div className="articles-button">
+      <SearchForm search = {props.search}/>
+      <Link to="/new-tutorial" >
         <button className="md-button new-tutorial-button">
           Make a New Tutorial
         </button>
       </Link>
+      </div>
       <Route path="/new-tutorial" component={NewTutorialForm} />
       <div className="articles-list-wrapper">
         {props.articles.map(post => (
