@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { fetchItem, newTutorial } from "../store/actions/index";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import Find from "./searchForm";
 
 const StyledForm = styled.form `
 
@@ -98,7 +97,6 @@ class NewTutorialForm extends Component {
       <StyledForm>
         <div className = "nav">
           <h2> How-to</h2>
-          <Find/>
       </div>
       <form className="tutorial-form">
         <div className="tutorial">
