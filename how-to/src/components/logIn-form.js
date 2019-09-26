@@ -66,7 +66,9 @@ function LogIn(props) {
         // name: values.name
       })
       .then(response => {
-        props.history.push("/articles");
+        localStorage.setItem("token", response.data.token);
+        console.log(response.data);
+        // props.history.push("/articles");
       })
       .catch(error => console.log(error));
   };

@@ -4,6 +4,7 @@ import { fetchItem } from "../store/actions/index";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { itemReducer } from "../store/reducers/index";
+import ItemCard from "./tutorial-card";
 
 class MyItems extends Component {
   componentDidMount() {
@@ -16,9 +17,7 @@ class MyItems extends Component {
         <h1>My Tutorials</h1>
         <div className="cards-container">
           {this.props.data &&
-            this.props.data.map(data => (
-              <NewTutorialForm key={data.id} data={data} />
-            ))}
+            this.props.data.map(data => <ItemCard key={data.id} data={data} />)}
         </div>
       </div>
     );
@@ -26,9 +25,9 @@ class MyItems extends Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.data,
-  fetching: state.fetching,
-  error: state.error
+  data: state.itemReducer.data,
+  fetching: state.itemReducer.fetching,
+  error: state.itemReducer.error
 });
 export default connect(
   mapStateToProps,

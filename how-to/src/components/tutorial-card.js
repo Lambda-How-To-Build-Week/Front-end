@@ -9,8 +9,8 @@ const ItemCard = props => {
     <div className="item-card">
       <h2>{props.data.item}</h2>
       <p>Description : {props.data.description}</p>
-      <p>Price : ${props.data.steps}/Day</p>
-      <p>Category : {props.data.tags}</p>
+      <p>Steps : {props.data.steps}</p>
+      <p>Tags : {props.data.tags}</p>
 
       <div className="btnctnr">
         <NavLink to={`/items/${props.data.id}/edit`}>
