@@ -61,7 +61,12 @@ export const FETCH_FAILURE = "FETCH_FAILURE";
 export const fetchItem = getStuff => dispatch => {
   dispatch({ type: FETCH_START });
   axiosWithAuth()
-    .get(`IDK YET`, getStuff)
+    .get(
+      `https://backend-v1.herokuapp.com/api/auth/:id/posts
+
+    `,
+      getStuff
+    )
     .then(res => {
       console.log("fetched items", res);
       dispatch({ type: FETCH_SUCCESS, payload: res.data });
@@ -77,7 +82,7 @@ export const TUTORIAL_START = "TUTORIAL_START";
 export const newTutorial = addStuff => dispatch => {
   dispatch({ type: TUTORIAL_START });
   axiosWithAuth()
-    .post("IDK YET", addStuff)
+    .post("https://backend-v1.herokuapp.com/api/auth/:id/posts", addStuff)
     .then(res => {
       console.log("added item", res.data);
       dispatch({ type: FETCH_SUCCESS, payload: res.data });

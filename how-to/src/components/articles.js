@@ -90,42 +90,54 @@ const StyledArticle = styled.div`
         }
         
     }
-`;
+`
 
 
 function Articles() {
-
-    return (
-        
-        <StyledArticle className='articles-wrapper'>
-            <div className = "nav">
-                <h2> How-to</h2>
-                <Find/>
-            </div>
-            <div className='articles-header'>
-                <h1>Suggested Articles</h1>
-            </div>
-            <Link to='/new-tutorial' className='articles-button'>
-                <button onClick className="md-button new-tutorial-button">Make a New Tutorial</button>
+  // const [items] = useState(posts);
+  return (
+    <StyledArticle className="articles-wrapper">
+      <div className = "nav">
+          <h2> How-to</h2>
+          <Find/>
+      </div>
+      {/* <nav> 
+                <div className="nav-links">
+                    <Link to="/">Home</Link>
+                    <Link to="/articles">Articles</Link>
+                    <Link to="/login"> Log In</Link>
+                    <SearchForm/>
+                </div>
+            </nav>
+            <Route exact path="/" component={SignUp} />
+            <Route exact path="/login" component={LogInPage} />
+            <Route exact path="/articles" render={props => <Articles {...props} articles={items} />}/> */}
+      <div className="articles-header">
+        <h1>Suggested Articles</h1>
+      </div>
+      <Link to="/new-tutorial" className="articles-button">
+        <button className="md-button new-tutorial-button">
+          Make a New Tutorial
+        </button>
+      </Link>
+      <Route path="/new-tutorial" component={NewTutorialForm} />
+      <div className="articles-list-wrapper">
+        {posts.map(post => (
+          <div className="article-card" key={post.id}>
+            <Link to={`/articles/${post.id}`}>
+              <img
+                className="article-list-image"
+                src={post.imageUrl}
+                alt={post.alt}
+              />
+              <h3>{post.title}</h3>
             </Link>
-            {/* <Route path='/new-tutorial' component={NewTutorialForm}/> */}
-        <div className='articles-list-wrapper'>
-           {posts.map(post => (
-               <div className='article-card' key={post.id}>
-                   <Link to={`/articles/${post.id}`}>
-                   <img className='article-list-image'
-                   src={post.imageUrl}
-                   alt={post.alt}/>
-                   <h3>{post.title}</h3>
-                   </Link>
-                   <p>{post.summary}</p>
-               </div>
-           ))}
-            </div>
-            
-        </StyledArticle>
-        
-    );
+            <p>{post.summary}</p>
+          </div>
+        ))}
+      </div>
+    </StyledArticle>
+  );
 }
 
 export default Articles;

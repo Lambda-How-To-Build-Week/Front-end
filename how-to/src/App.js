@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Route, Link } from "react-router-dom";
 import "./App.css";
+// import SearchForm from "./components/search-form";
 import SignUp from "./components/sign-up";
-import SearchForm from './components/search-form';
 import Articles from "./components/articles";
-import LogInPage from './components/logIn-page';
+import LogInPage from "./components/logIn-page";
 import data from "./data";
+import NewTutorialForm from "./components/new-tutorial";
+import MyItems from "./components/finished-tutorial";
 import Find from "./components/searchForm";
-import NewTutorialForm from "./components/new-tutorial"
-
 
 function App() {
 
@@ -42,8 +42,10 @@ function App() {
           {/* <SearchForm/> */}
         </div>
       </nav>
+      <Route path = "/login" component = {LogInPage}/>
       <Route exact path="/" component={SignUp} />
-      <Route exact path="/login" component={LogInPage} />
+      <Route exact path="/finished-tutorial" component={MyItems} />
+      <Route exact path="/new-tutorial" component={NewTutorialForm} />
       <Route
         exact
         path="/articles"
