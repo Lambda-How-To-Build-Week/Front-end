@@ -2,28 +2,41 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import '../App.css';
 import NewTutorialForm from './new-tutorial';
-import SearchForm from './search-form';
 import posts from '../data';
 import styled from 'styled-components';
+import Find from "./searchForm";
 
 
 const StyledArticle = styled.div`
 
-    .search-form{
-        display:flex;
-        flex-direction:row;
-        justify-content:flex-end;
-        align-content:flex-end;
-        flex-wrap:wrap;
-        margin-top:10px;
-        margin-right:50px;
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+
+    h2{
+        color: white;
+    }
+
+    .nav{
+        box-sizing: border-box;
+        border: 1px solid red;
+        width: 100vw;
+        margin-top: 0;
+        padding: 1rem 5rem;
+        background-color:#e76e3c;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .articles-list-wrapper {
-        margin-top: 75px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        // margin-top: 75px;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: center;
+        border: 1px solid red;
+        width: 80%;
+        margin: 0 auto;
     }
     
     .article-card {
@@ -43,41 +56,41 @@ const StyledArticle = styled.div`
     }
     
     .articles-header{
-        display:flex;
-        flex-direction:row;
-        justify-content:center;
-        align-items:center;
+        // display:flex;
+        // flex-direction:row;
+        // justify-content:center;
+        // align-items:center;
     }
     
     .articles-button {
-        display:flex;
-        flex-direction:row;
-        justify-content:flex-end;
-        align-content:flex-end;
-        flex-wrap:wrap;
-        margin-right:25px;
+        // display:flex;
+        // flex-direction:row;
+        // justify-content:flex-end;
+        // align-content:flex-end;
+        // flex-wrap:wrap;
+        // margin-right:25px;
     }
   
     .articles-button .md-button {
-        margin: 0 8px;
-        margin-right:20px;
-        border: none;
-        border-radius: 2px;
-        padding: 0 16px;
-        min-width: 64px;
-        height: 36px;
-        vertical-align: middle;
-        text-align: center;
-        text-overflow: ellipsis;
-        font-size:1.3rem;
-        font-weight:bold;
-        color: #fff;
-        background-color: #e76e3c;
+        // margin: 0 8px;
+        // margin-right:20px;
+        // border: none;
+        // border-radius: 2px;
+        // padding: 0 16px;
+        // min-width: 64px;
+        // height: 36px;
+        // vertical-align: middle;
+        // text-align: center;
+        // text-overflow: ellipsis;
+        // font-size:1.3rem;
+        // font-weight:bold;
+        // color: #fff;
+        // background-color: #e76e3c;
         
     }
 
     button:hover {
-        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        // box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
       }
 `;
 
@@ -87,7 +100,10 @@ function Articles() {
     return (
         
         <StyledArticle className='articles-wrapper'>
-            <div className='search-wrapper'><SearchForm/></div>
+            <div className = "nav">
+                <h2> How-to</h2>
+                <Find/>
+            </div>
             <div className='articles-header'>
                 <h1>Suggested Articles</h1>
             </div>

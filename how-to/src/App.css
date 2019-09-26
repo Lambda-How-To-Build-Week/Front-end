@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  margin-top: 3%;
   height: 80vh;
   color: #E76E3C;
 }
@@ -44,9 +43,6 @@ a:hover{
   color:#4098db;
 }
 
-h2,h3,h4{
-  color:#4098db;
-}
 
 
 
