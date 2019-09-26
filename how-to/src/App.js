@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { Route, Link } from "react-router-dom";
 import "./App.css";
-// import SearchForm from "./components/search-form";
 import SignUp from "./components/sign-up";
 import Articles from "./components/articles";
 import LogInPage from "./components/logIn-page";
 import data from "./data";
 import NewTutorialForm from "./components/new-tutorial";
 import MyItems from "./components/finished-tutorial";
-import SearchForm from "./components/searchForm";
 
 function App() {
 
@@ -44,7 +42,6 @@ function App() {
         render={props => <Articles {...props} articles={filteredItems} search= {search} />}
       />
       <Route path='/new-tutorial' component={NewTutorialForm}/>
-      {/* <SignUp/> Took this out -- made it the Home link */}
     </div>
   );
 }
