@@ -4,45 +4,43 @@ import "./App.css";
 // import SearchForm from "./components/search-form";
 import SignUp from "./components/sign-up";
 import Articles from "./components/articles";
-import LogInPage from "./components/logIn-page";
+import LogIn from "./components/logIn-form";
 import data from "./data";
 import NewTutorialForm from "./components/new-tutorial";
 import MyItems from "./components/finished-tutorial";
 import Find from "./components/searchForm";
+import EditItem from "./components/edit-tutorial";
 
 function App() {
-
   const [tutorial, setTutorial] = useState([]);
 
   const search = (formValue, actions) => {
-    const rightTutorial = tutorial.filter( tut => {
-      if(tut.name.toLowerCase().includes(formValue.name)){
-        return tut
+    const rightTutorial = tutorial.filter(tut => {
+      if (tut.name.toLowerCase().includes(formValue.name)) {
+        return tut;
       }
-    })
+    });
     setTutorial(rightTutorial);
     actions.resetForm();
-  }
+  };
 
-
-  const validationSchema = {a:'build'};
+  const validationSchema = { a: "build" };
 
   const [items] = useState(data);
 
-
   return (
     <div className="App">
-      <nav> 
+      <nav>
         <div className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/articles">Articles</Link>
           <Link to="/login"> Log In</Link>
-          <Link to = "/new-tutorial">tutorial</Link>
-          
+          <Link to="/new-tutorial">tutorial</Link>
+
           {/* <SearchForm/> */}
         </div>
       </nav>
-      <Route path = "/login" component = {LogInPage}/>
+      <Route path="/login" component={LogIn} />
       <Route exact path="/" component={SignUp} />
       <Route exact path="/finished-tutorial" component={MyItems} />
       <Route
@@ -50,12 +48,17 @@ function App() {
         path="/articles"
         render={props => <Articles {...props} articles={items} />}
       />
-      <Route path='/new-tutorial' component={NewTutorialForm}/>
-      <Route path='/articles' 
-        render={props => <Find
-        {...props} 
-        search={search} 
-        validationSchema={validationSchema} />}
+      <Route path="/edit-tutorial" component={EditItem} />
+      <Route path="/new-tutorial" component={NewTutorialForm} />
+      <Route
+        path="/articles"
+        render={props => (
+          <Find
+            {...props}
+            search={search}
+            validationSchema={validationSchema}
+          />
+        )}
       />
       {/* <SignUp/> Took this out -- made it the Home link */}
     </div>

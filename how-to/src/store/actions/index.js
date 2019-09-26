@@ -77,7 +77,9 @@ export const TUTORIAL_START = "TUTORIAL_START";
 export const newTutorial = addStuff => dispatch => {
   dispatch({ type: TUTORIAL_START });
   axiosWithAuth()
-    .post(`/api/auth/posts`, addStuff)
+    // .post(`/api/auth/posts`, addStuff)
+    .post(`:user_id/posts/:post_id/instructions`, addStuff)
+
     .then(res => {
       console.log("added item", res.data);
       dispatch({ type: FETCH_SUCCESS, payload: res.data });
