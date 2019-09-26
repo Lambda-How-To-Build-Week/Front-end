@@ -34,10 +34,10 @@ function App() {
     <div className="App">
       <nav> 
         <div className="nav-links">
-          {/* <Link to="/">Home</Link>
+          <Link to="/">Home</Link>
           <Link to="/articles">Articles</Link>
           <Link to="/login"> Log In</Link>
-          <Link to ="/find">Find</Link> */}
+          <Link to = "/new-tutorial">tutorial</Link>
           
           {/* <SearchForm/> */}
         </div>

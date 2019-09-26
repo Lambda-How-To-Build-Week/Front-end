@@ -36,6 +36,13 @@ button{
     padding: 1rem;
     background-color: #E76E3C;
     color: white;
+    border: 1px solid #E76E3C;
+
+    &:hover{
+        background-color: white; 
+        color: #E76E3C;
+        border: 1px solid #E76E3C;
+    }
 }
 
 .usage{

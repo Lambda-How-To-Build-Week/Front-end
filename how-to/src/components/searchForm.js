@@ -3,32 +3,22 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import styled from "styled-components"
 
 const StyledSection = styled.section `
-    // display: flex;
-    // flex-direction: column;
-    // width: 100%;
-    // text-align: center;
-    // color: grey;
-    // margin-top: 2%;
-    // align-items: flex-end;
-    // font-family: 'Cute Font', cursive;
-    // div{
-    //     width: 30%;
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    // }
-    // input{
-    //     width: 70%;
-    //     text-align: centre;
-    // }
-    // button{
-      
-    //     margin-top: 0.5rem;
-    //     // background-color: #00FF7F;
-    //     width 30%;
-    //     color: gray;
-    //     padding: 0.5rem;
+    input{
+        margin-right: 1rem;
+        border: 1px solid white;
     }
+    button{
+        border: 1px solid #E76E3C;
+        padding: 0.2rem 0.5rem;
+        border-radius: 50%;
+
+        &:hover{
+            color: #E76E3C;
+            background-color: lightgrey;
+        }
+    }
+   
+    
 `
 
 
