@@ -8,26 +8,21 @@ import LogInPage from "./components/logIn-page";
 import data from "./data";
 import NewTutorialForm from "./components/new-tutorial";
 import MyItems from "./components/finished-tutorial";
-import Find from "./components/searchForm";
+import SearchForm from "./components/searchForm";
 
 function App() {
 
-  const [tutorial, setTutorial] = useState([]);
-
-  const search = (formValue, actions) => {
-    const rightTutorial = tutorial.filter( tut => {
-      if(tut.name.toLowerCase().includes(formValue.name)){
-        return tut
-      }
-    })
-    setTutorial(rightTutorial);
-    actions.resetForm();
+  const [items, setItems] = useState(data);
+  const [filteredItems, setFiltered] = useState(data);
+  const search = (query) => {
+    console.log(query)
+    const found = items.filter(item => item.title.toLowerCase().includes(query))
+    setFiltered(found)
   }
 
+  
 
-  const validationSchema = {a:'build'};
-
-  const [items] = useState(data);
+  const [post] = useState(data);
 
 
   return (
@@ -38,8 +33,6 @@ function App() {
           <Link to="/articles">Articles</Link>
           <Link to="/login"> Log In</Link>
           <Link to = "/new-tutorial">tutorial</Link>
-          
-          {/* <SearchForm/> */}
         </div>
       </nav>
       <Route path = "/login" component = {LogInPage}/>
@@ -48,15 +41,9 @@ function App() {
       <Route
         exact
         path="/articles"
-        render={props => <Articles {...props} articles={items} />}
+        render={props => <Articles {...props} articles={filteredItems} search= {search} />}
       />
       <Route path='/new-tutorial' component={NewTutorialForm}/>
-      <Route path='/articles' 
-        render={props => <Find
-        {...props} 
-        search={search} 
-        validationSchema={validationSchema} />}
-      />
       {/* <SignUp/> Took this out -- made it the Home link */}
     </div>
   );
