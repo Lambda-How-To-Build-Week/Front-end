@@ -4,7 +4,7 @@ import '../App.css';
 import NewTutorialForm from './new-tutorial';
 import posts from '../data';
 import styled from 'styled-components';
-import Find from "./searchForm";
+import SearchForm from "./searchForm";
 
 
 const StyledArticle = styled.div`
@@ -32,7 +32,6 @@ const StyledArticle = styled.div`
     }
 
     .articles-list-wrapper {
-        border: 1px solid red;
         width: 80%;
         margin: 0 auto;
         display: flex;
@@ -91,13 +90,13 @@ const StyledArticle = styled.div`
 `
 
 
-function Articles() {
+function Articles(props) {
   // const [items] = useState(posts);
   return (
     <StyledArticle className="articles-wrapper">
       <div className = "nav">
           <h2> How-to</h2>
-          <Find/>
+          <SearchForm search = {props.search}/>
       </div>
       {/* <nav> 
                 <div className="nav-links">
@@ -120,7 +119,7 @@ function Articles() {
       </Link>
       <Route path="/new-tutorial" component={NewTutorialForm} />
       <div className="articles-list-wrapper">
-        {posts.map(post => (
+        {props.articles.map(post => (
           <div className="article-card" key={post.id}>
             <Link to={`/articles/${post.id}`}>
               <img
