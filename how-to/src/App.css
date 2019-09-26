@@ -1,6 +1,16 @@
+*{
+  font-family: 'Lato', sans-serif;
+
+}
+
+h1,h2,h3,h4{
+  font-family: 'Righteous', cursive;
+
+}
+
+
 .App {
   text-align: center;
-  margin-top: 3%;
   height: 80vh;
   color: #E76E3C;
 }
@@ -42,16 +52,20 @@
 
 a{
   text-decoration:none;
+<<<<<<< HEAD
   font-weight:bold;
 }
 
 a:hover{
   color:#4098db;
+=======
+>>>>>>> 8931df042c9e9554bbc6adb0f01cabc4e1ecc4e8
 }
 
-h2,h3,h4{
-  color:#4098db;
+a:hover{
+  color: lightgrey;
 }
+
 
 
 

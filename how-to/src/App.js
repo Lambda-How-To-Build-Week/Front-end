@@ -1,34 +1,49 @@
 import React, { useState } from "react";
 import { Route, Link } from "react-router-dom";
 import "./App.css";
-// import SearchBar from './components/search-bar';
+// import SearchForm from "./components/search-form";
 import SignUp from "./components/sign-up";
 import Articles from "./components/articles";
-import LogInPage from './components/logIn-page';
+import LogInPage from "./components/logIn-page";
 import data from "./data";
+import NewTutorialForm from "./components/new-tutorial";
+import MyItems from "./components/finished-tutorial";
+import SearchForm from "./components/searchForm";
 
 function App() {
-  const [items] = useState(data);
+
+  const [items, setItems] = useState(data);
+  const [filteredItems, setFiltered] = useState(data);
+  const search = (query) => {
+    console.log(query)
+    const found = items.filter(item => item.title.toLowerCase().includes(query))
+    setFiltered(found)
+  }
+
+  
+
+  const [post] = useState(data);
+
+
   return (
     <div className="App">
-      <div className='navigation'>
-        <nav> 
-          <div className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/articles">Articles</Link>
-            <Link to="/login"> Log In</Link>
-            {/* <SearchBar/> */}
-          </div>
-            
-        </nav>
-      </div>
+      <nav> 
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/articles">Articles</Link>
+          <Link to="/login"> Log In</Link>
+          <Link to = "/new-tutorial">tutorial</Link>
+        </div>
+      </nav>
+      <Route path = "/login" component = {LogInPage}/>
       <Route exact path="/" component={SignUp} />
+      <Route exact path="/finished-tutorial" component={MyItems} />
       <Route
         exact
         path="/articles"
-        render={props => <Articles {...props} articles={items} />}
+        render={props => <Articles {...props} articles={filteredItems} search= {search} />}
       />
-      <Route exact path="/login" component={LogInPage}/>
+      <Route path='/new-tutorial' component={NewTutorialForm}/>
       {/* <SignUp/> Took this out -- made it the Home link */}
     </div>
   );

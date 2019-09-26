@@ -1,29 +1,57 @@
-
-// import { Route, Link } from "react-router-dom";
+import React from 'react';
+import { Route, Link } from 'react-router-dom';
 import '../App.css';
+import NewTutorialForm from './new-tutorial';
+import posts from '../data';
 import styled from 'styled-components';
-// import SearchBar from './search-bar';
-// import NewTutorialForm from './new-tutorial';
-import React, { useState } from 'react';
-import data from '../data';
+import SearchForm from "./searchForm";
+
 
 const StyledArticle = styled.div`
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+
+    h2{ 
+        color: white;
+    }
+
+    .nav{
+        box-sizing: border-box;
+        width: 100vw;
+        margin-top: 0;
+        padding: 1rem 5rem;
+        background-color:#e76e3c;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .articles-header{
+        margin: 3rem;
+    }
 
     .articles-list-wrapper {
-        margin-top: 75px;
+        width: 80%;
+        margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-around;
     }
-    
+
     .article-card {
         width: 250px;
-        margin: 0 10px 32px;
+        height: 350px;
+        margin: 2rem;
+        padding: 1rem;
+
+        @media only screen and (max-width: 600px){
+            margin-bottom: 0;
+        }
     }
     
     .article-card p {
-        margin: 0 0 4px;
-        text-align: left;
+        text-align: center;
         color: #595959;
     }
     
@@ -31,81 +59,82 @@ const StyledArticle = styled.div`
         width: 100%;
         border: 1px solid lightgray;
     }
-    
-    .articles-header{
-        display:flex;
-        flex-direction:row;
-        justify-content:center;
-        align-items:center;
+
+    a{
+        & h3{
+            color: #e76e3c;
+        }
     }
     
+    
     .articles-button {
-        display:flex;
-        flex-direction:row;
-        justify-content:flex-end;
-        align-content:flex-end;
-        flex-wrap:wrap;
-        margin-right:25px;
+       padding: 1rem;
+       postion: relative;
+       display: flex;
+       justify-content:flex-end;
+
     }
   
     .articles-button .md-button {
-        margin: 0 8px;
-        margin-right:20px;
-        border: none;
-        border-radius: 2px;
-        padding: 0 16px;
-        min-width: 64px;
-        height: 36px;
-        vertical-align: middle;
-        text-align: center;
-        text-overflow: ellipsis;
-        font-size:1.3rem;
-        font-weight:bold;
         color: #fff;
         background-color: #e76e3c;
+        padding: 1rem 2rem;
+
+        &:hover{
+            border: 1px solid #e76e3c;
+            background-color: white;
+            color: #e76e3c; 
+        }
         
     }
-
-    button:hover {
-        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-      }
-`;
+`
 
 
-
-function Articles () {
-//    const [articles] = useState(data)
-
-//call filter before map
-
-    return (
-        <div className='articles-wrapper'>
-            <div className='articles-header'>
-                <h1>Suggested Articles</h1>
-                {/* <SearchBar/> */}
-            </div>
-
-            {/* <Link to='/new-tutorial' className='articles-button'>
-                <button onClick className="md-button new-tutorial-button">Make a New Tutorial</button>
-            </Link> */}
-            {/* <Route path='/new-tutorial' component={NewTutorialForm}/> */}
-            <StyledArticle>
-            <div className='articles-list-wrapper'></div>
-            {data.map(post => (
-               <div className='article-card' key={post.id}>
-                   <h2>{post.title}</h2>
-                   <img className='article-list-image'
-                   src={post.imageUrl}
-                   alt={post.alt}/>
-                   <h3>{post.title}</h3>
-                   <p>{post.summary}</p>
-               </div>
-           ))}
-           
-        </StyledArticle>
-        </div>
-    );
-            
+function Articles(props) {
+  // const [items] = useState(posts);
+  return (
+    <StyledArticle className="articles-wrapper">
+      <div className = "nav">
+          <h2> How-to</h2>
+          <SearchForm search = {props.search}/>
+      </div>
+      {/* <nav> 
+                <div className="nav-links">
+                    <Link to="/">Home</Link>
+                    <Link to="/articles">Articles</Link>
+                    <Link to="/login"> Log In</Link>
+                    <SearchForm/>
+                </div>
+            </nav>
+            <Route exact path="/" component={SignUp} />
+            <Route exact path="/login" component={LogInPage} />
+            <Route exact path="/articles" render={props => <Articles {...props} articles={items} />}/> */}
+      <div className="articles-header">
+        <h1>Suggested Articles</h1>
+      </div>
+      <Link to="/new-tutorial" className="articles-button">
+        <button className="md-button new-tutorial-button">
+          Make a New Tutorial
+        </button>
+      </Link>
+      <Route path="/new-tutorial" component={NewTutorialForm} />
+      <div className="articles-list-wrapper">
+        {props.articles.map(post => (
+          <div className="article-card" key={post.id}>
+            <Link to={`/articles/${post.id}`}>
+              <img
+                className="article-list-image"
+                src={post.imageUrl}
+                alt={post.alt}
+              />
+              <h3>{post.title}</h3>
+            </Link>
+            <p>{post.summary}</p>
+          </div>
+        ))}
+      </div>
+    </StyledArticle>
+  );
 }
 
 export default Articles;

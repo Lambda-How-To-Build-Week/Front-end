@@ -1,7 +1,71 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { fetchItem, newTutorial } from "../store/actions/index";
-import { connect } from "formik";
+import { connect } from "react-redux";
+import styled from "styled-components";
+import Find from "./searchForm";
+
+const StyledForm = styled.form `
+
+  box-sizing: border-box;
+  padding: 0; 
+  margin: 0;
+
+  .nav{
+    box-sizing: border-box;
+    width: 100vw;
+    margin-top: 0;
+    padding: 1rem 5rem;
+    background-color:#e76e3c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h2{
+  color: white;
+}
+
+  .tutorial-form{
+    border: 1px solid #E76E3C;
+    width: 80%;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 5%;
+
+    @media only screen and (max-width: 1000px){
+      border: none;
+    }
+
+
+
+    input{
+      border: 1px solid #E76E3C;
+      width: 60%;
+      height: 3rem;
+      text-align: center;
+    }
+
+    h3{
+      margin-top: 2.5rem;
+    }
+
+    button{
+      border: 1px solid #E76E3C;
+      margin: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #E76E3C;
+      color: white;
+      width 30%;
+
+      &: hover{
+        background-color: white;
+        color: #E76E3C;
+      }
+    }
+
+  }
+`
 
 class NewTutorialForm extends Component {
   state = {
@@ -21,7 +85,7 @@ class NewTutorialForm extends Component {
       steps: "",
       tags: ""
     });
-    this.props.history.push("IDK YET");
+    this.props.history.push("/finished-tutorial");
   };
   handleChange = event => {
     event.preventDefault();
@@ -31,6 +95,11 @@ class NewTutorialForm extends Component {
   render() {
     console.log("ADD: ", this.state);
     return (
+      <StyledForm>
+        <div className = "nav">
+          <h2> How-to</h2>
+          <Find/>
+      </div>
       <form className="tutorial-form">
         <div className="tutorial">
           <div className="add-input">
@@ -54,12 +123,54 @@ class NewTutorialForm extends Component {
             />
           </div>
           <div className="add-input">
-            <h3>Now add your steps to completing this Tutorial</h3>
+            <h3>
+              Now add your steps to completing this Tutorial, Step 1 goes here!
+            </h3>
             <input
               type="text"
               value={this.state.steps}
               name="steps"
               placeholder="Step 1..."
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="add-input">
+            <h3>Step 2, lets hear it!</h3>
+            <input
+              type="text"
+              value={this.state.steps}
+              name="steps"
+              placeholder="Step 2..."
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="add-input">
+            <h3>Step 3, be specific!</h3>
+            <input
+              type="text"
+              value={this.state.steps}
+              name="steps"
+              placeholder="Step 3..."
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="add-input">
+            <h3>Step 4, now were getting somewhere!</h3>
+            <input
+              type="text"
+              value={this.state.steps}
+              name="steps"
+              placeholder="Step 4..."
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="add-input">
+            <h3>Final step, wrap it up! </h3>
+            <input
+              type="text"
+              value={this.state.steps}
+              name="steps"
+              placeholder="Step 5..."
               onChange={this.handleChange}
             />
           </div>
@@ -81,6 +192,7 @@ class NewTutorialForm extends Component {
           </button>
         </div>
       </form>
+      </StyledForm>
     );
   }
 }
