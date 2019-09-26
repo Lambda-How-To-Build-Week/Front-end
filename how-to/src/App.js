@@ -32,7 +32,7 @@ function App() {
           <Link to="/new-tutorial">tutorial</Link>
         </div>
       </nav>
-      <Route exact path="/sign-up" component={SignUp} />
+      <Route exact path="/" component={SignUp} />
       <Route path="/login" component={LogIn} />
       <Route exact path="/edit-tutorial" component={EditItem} />
       <Route exact path="/finished-tutorial" component={MyItems} />
