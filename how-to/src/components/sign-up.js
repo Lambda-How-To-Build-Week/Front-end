@@ -2,8 +2,7 @@ import { connect } from "react-redux";
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import styled from "styled-components";
-import { Route, Link } from "react-router-dom";
-import LogInPage from "./logIn-page";
+import { Link } from "react-router-dom";
 import { addUser } from "../store/actions/index";
 import PrivateRoute from "../utils/authRouter";
 import axios from "axios";
@@ -17,13 +16,12 @@ const StyledForm = styled.div`
   width: 80%;
   margin: 2rem auto;
 
-  form {
-    width: 70%;
-    margin: 5% auto 2% auto;
-    padding: 3rem 1rem;
-    border-radius: 5rem;
+  form {	    
+    width: 70%;	    
+    margin: 15% auto 2% auto;	    
+    padding: 3rem 1rem;	      
+    border-radius: 5rem;	     
     background-color: white;
-    border: 1px solid #e76e3c;
     width: 70%;
 
     ::before {
@@ -62,6 +60,13 @@ const StyledForm = styled.div`
       padding: 1rem;
       background-color: #e76e3c;
       color: white;
+      border: 1px solid #e76e3c;
+
+      &:hover{
+        background-color: white;
+        border: 1px solid #e76e3c;
+        color: #e76e3c;
+      }
     }
   }
 

@@ -2,7 +2,6 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { Route, Link } from "react-router-dom";
 import { addUser } from "../store/actions/index";
 import PrivateRoute from "../utils/authRouter";
 import axios from "axios";
@@ -40,7 +39,14 @@ const StyledDiv = styled.div`
     padding: 1rem;
     background-color: #e76e3c;
     color: white;
-  }
+    border: 1px solid #E76E3C;
+
+    &:hover{
+        background-color: white; 
+        color: #E76E3C;
+        border: 1px solid #E76E3C;
+    }
+}
 
   .usage {
     width: 90%;

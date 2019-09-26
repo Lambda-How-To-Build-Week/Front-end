@@ -1,8 +1,71 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { fetchItem, newTutorial } from "../store/actions/index";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import Find from "./searchForm";
+
+const StyledForm = styled.form `
+
+  box-sizing: border-box;
+  padding: 0; 
+  margin: 0;
+
+  .nav{
+    box-sizing: border-box;
+    width: 100vw;
+    margin-top: 0;
+    padding: 1rem 5rem;
+    background-color:#e76e3c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h2{
+  color: white;
+}
+
+  .tutorial-form{
+    border: 1px solid #E76E3C;
+    width: 80%;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 5%;
+
+    @media only screen and (max-width: 1000px){
+      border: none;
+    }
+
+
+
+    input{
+      border: 1px solid #E76E3C;
+      width: 60%;
+      height: 3rem;
+      text-align: center;
+    }
+
+    h3{
+      margin-top: 2.5rem;
+    }
+
+    button{
+      border: 1px solid #E76E3C;
+      margin: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #E76E3C;
+      color: white;
+      width 30%;
+
+      &: hover{
+        background-color: white;
+        color: #E76E3C;
+      }
+    }
+
+  }
+`
 
 class NewTutorialForm extends Component {
   state = {
@@ -33,6 +96,11 @@ class NewTutorialForm extends Component {
   render() {
     console.log("ADD: ", this.state);
     return (
+      <StyledForm>
+        <div className = "nav">
+          <h2> How-to</h2>
+          <Find/>
+      </div>
       <form className="tutorial-form">
         <div className="tutorial">
           <div className="add-input">
@@ -123,6 +191,7 @@ class NewTutorialForm extends Component {
           </button>
         </div>
       </form>
+      </StyledForm>
     );
   }
 }
