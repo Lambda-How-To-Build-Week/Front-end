@@ -4,22 +4,20 @@ import '../App.css';
 import NewTutorialForm from './new-tutorial';
 import posts from '../data';
 import styled from 'styled-components';
-import Find from "./searchForm";
+import Find from "./searchForm"
 
 
 const StyledArticle = styled.div`
-
     margin: 0;
     padding:0;
     box-sizing: border-box;
 
-    h2{
+    h2{ 
         color: white;
     }
 
     .nav{
         box-sizing: border-box;
-        border: 1px solid red;
         width: 100vw;
         margin-top: 0;
         padding: 1rem 5rem;
@@ -29,24 +27,34 @@ const StyledArticle = styled.div`
         justify-content: space-between;
     }
 
+    .articles-header{
+        margin: 3rem;
+    }
+
     .articles-list-wrapper {
         // margin-top: 75px;
         // display: flex;
-        // flex-wrap: wrap;
         // justify-content: center;
-        border: 1px solid red;
         width: 80%;
         margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
-    
+
     .article-card {
         width: 250px;
-        margin: 0 10px 32px;
+        height: 350px;
+        margin: 2rem;
+        padding: 1rem;
+
+        @media only screen and (max-width: 600px){
+            margin-bottom: 0;
+        }
     }
     
     .article-card p {
-        margin: 0 0 4px;
-        text-align: left;
+        text-align: center;
         color: #595959;
     }
     
@@ -54,44 +62,34 @@ const StyledArticle = styled.div`
         width: 100%;
         border: 1px solid lightgray;
     }
-    
-    .articles-header{
-        // display:flex;
-        // flex-direction:row;
-        // justify-content:center;
-        // align-items:center;
+
+    a{
+        & h3{
+            color: #e76e3c;
+        }
     }
     
+    
     .articles-button {
-        // display:flex;
-        // flex-direction:row;
-        // justify-content:flex-end;
-        // align-content:flex-end;
-        // flex-wrap:wrap;
-        // margin-right:25px;
+       padding: 1rem;
+       postion: relative;
+       display: flex;
+       justify-content:flex-end;
+
     }
   
     .articles-button .md-button {
-        // margin: 0 8px;
-        // margin-right:20px;
-        // border: none;
-        // border-radius: 2px;
-        // padding: 0 16px;
-        // min-width: 64px;
-        // height: 36px;
-        // vertical-align: middle;
-        // text-align: center;
-        // text-overflow: ellipsis;
-        // font-size:1.3rem;
-        // font-weight:bold;
-        // color: #fff;
-        // background-color: #e76e3c;
+        color: #fff;
+        background-color: #e76e3c;
+        padding: 1rem 2rem;
+
+        &:hover{
+            border: 1px solid #e76e3c;
+            background-color: white;
+            color: #e76e3c; 
+        }
         
     }
-
-    button:hover {
-        // box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-      }
 `;
 
 
