@@ -4,27 +4,20 @@ import { fetchItem } from "../store/actions/index";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { itemReducer } from "../store/reducers/index";
+import ItemCard from "./tutorial-card";
 
 class MyItems extends Component {
   componentDidMount() {
     this.props.fetchItem();
   }
   render() {
+    console.log(this.props);
     return (
       <div className="finished-tutorial-page">
-        <div>
-          <NavLink to="/add">
-            <button>Add Item</button>
-          </NavLink>
-          <NavLink to="/protected">
-            <button>Back</button>
-          </NavLink>
-        </div>
-        <h1>My Items</h1>
+        <h1>My Tutorials</h1>
         <div className="cards-container">
-          {this.props.data.map(data => (
-            <NewTutorialForm key={data.id} data={data} />
-          ))}
+          {this.props.data &&
+            this.props.data.map(data => <ItemCard key={data.id} data={data} />)}
         </div>
       </div>
     );
@@ -40,18 +33,3 @@ export default connect(
   mapStateToProps,
   { fetchItem }
 )(MyItems);
-// import React from "react";
-
-// const ItemCard = props => {
-//   console.log(props.data.id);
-//   return (
-//     <div className="tutorial-card">
-//       <h2>{props.data.tutorial}</h2>
-//       <p>Description : {props.data.description}</p>
-//       <p>Steps : ${props.data.steps}</p>
-//       <p>Tags : {props.data.tags}</p>
-//     </div>
-//   );
-// };
-
-// export default ItemCard;

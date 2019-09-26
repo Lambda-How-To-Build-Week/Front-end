@@ -39,14 +39,14 @@ const StyledDiv = styled.div`
     padding: 1rem;
     background-color: #e76e3c;
     color: white;
-    border: 1px solid #E76E3C;
+    border: 1px solid #e76e3c;
 
-    &:hover{
-        background-color: white; 
-        color: #E76E3C;
-        border: 1px solid #E76E3C;
+    &:hover {
+      background-color: white;
+      color: #e76e3c;
+      border: 1px solid #e76e3c;
     }
-}
+  }
 
   .usage {
     width: 90%;
@@ -72,6 +72,8 @@ function LogIn(props) {
         // name: values.name
       })
       .then(response => {
+        localStorage.setItem("token", response.data.token);
+        console.log(response.data);
         props.history.push("/articles");
       })
       .catch(error => console.log(error));
