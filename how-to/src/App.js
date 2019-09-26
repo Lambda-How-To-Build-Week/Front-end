@@ -26,12 +26,13 @@ function App() {
     <div className="App">
       <nav>
         <div className="nav-links">
-          <Link to="/">Home</Link>
+          <Link to="/sign-up">Home</Link>
           <Link to="/articles">Articles</Link>
           <Link to="/login"> Log In</Link>
           <Link to="/new-tutorial">tutorial</Link>
         </div>
       </nav>
+      <Route exact path="/sign-up" component={SignUp} />
       <Route path="/login" component={LogIn} />
       <Route exact path="/edit-tutorial" component={EditItem} />
       <Route exact path="/finished-tutorial" component={MyItems} />
