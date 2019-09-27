@@ -3,20 +3,36 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { addUser } from "../store/actions/index";
-import PrivateRoute from "../utils/authRouter";
 import axios from "axios";
+
+
+
+
 const StyledDiv = styled.div`
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  height: 50vh;
-  margin: 10% auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #e76e3c;
-  border-radius: 5%;
+  
+
+
+  .container{
+    border: 1px solid #e76e3c;
+    width: 80%;
+    height: 50vh;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #e76e3c;
+    border-radius: 10%;
+    padding: 2rem;
+
+    @media only screen and (max-width: 800px){
+      border: none;
+    }
+  }
+
 
   label {
     display: block;
@@ -35,7 +51,7 @@ const StyledDiv = styled.div`
   }
 
   button {
-    width: 50%;
+    width: 30%;
     padding: 1rem;
     background-color: #e76e3c;
     color: white;
@@ -88,6 +104,7 @@ function LogIn(props) {
         return (
           <Form>
             <StyledDiv>
+              <div className = "container">
               <h1>How to</h1>
               <label>
                 Username
@@ -112,6 +129,7 @@ function LogIn(props) {
                 </label>
               </div>
               <button type="submit">Log In!</button>
+              </div>
             </StyledDiv>
           </Form>
         );
