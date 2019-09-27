@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 // import axios from "axios";
+import { Route, Link } from "react-router-dom";
 import { fetchItem, newTutorial } from "../store/actions/index";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import LogIn from "./logIn-page";
 
-const StyledForm = styled.form `
+const StyledForm = styled.form`
 
   box-sizing: border-box;
   padding: 0; 
@@ -21,7 +23,13 @@ const StyledForm = styled.form `
     justify-content: space-between;
 }
 
-h2{
+.nav a{
+  padding: 25px;
+  color: white;
+
+}
+
+h1, h2{
   color: white;
 }
 
@@ -64,7 +72,7 @@ h2{
     }
 
   }
-`
+`;
 
 class NewTutorialForm extends Component {
   state = {
@@ -96,42 +104,51 @@ class NewTutorialForm extends Component {
     console.log("ADD: ", this.state);
     return (
       <StyledForm>
-        <div className = "nav">
-          <h2> How-to</h2>
-      </div>
-      <form className="tutorial-form">
-        <div className="tutorial">
-          <div className="add-input">
-            <h3>What will you be teaching us today?</h3>
-            <input
-              type="text"
-              value={this.state.tutorial}
-              name="tutorial"
-              placeholder="Tutorial Name"
-              onChange={this.handleChange}
-            />
+        <div className="nav">
+          <h1> How-to</h1>
+          <div>
+            <nav>
+              <div className="nav-links">
+                <a href="https://distracted-brown-8fd3b2.netlify.com/">Home</a>
+                <Link to="/articles">Articles</Link>
+                <Route path="/login" component={LogIn} />
+              </div>
+            </nav>
           </div>
-          <div className="add-input">
-            <h3>Please provide a description of your Tutorial</h3>
-            <input
-              type="text"
-              value={this.state.description}
-              name="description"
-              placeholder="Describe your Tutorial"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="add-input">
-            <h3>Now add your steps to completing this Tutorial!</h3>
-            <input
-              type="text"
-              value={this.state.steps}
-              name="steps"
-              placeholder="Step 1..."
-              onChange={this.handleChange}
-            />
-          </div>
-          {/* <div className="add-input">
+        </div>
+        <form className="tutorial-form">
+          <div className="tutorial">
+            <div className="add-input">
+              <h3>What will you be teaching us today?</h3>
+              <input
+                type="text"
+                value={this.state.tutorial}
+                name="tutorial"
+                placeholder="Tutorial Name"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="add-input">
+              <h3>Please provide a description of your Tutorial</h3>
+              <input
+                type="text"
+                value={this.state.description}
+                name="description"
+                placeholder="Describe your Tutorial"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="add-input">
+              <h3>Now add your steps to completing this Tutorial!</h3>
+              <input
+                type="text"
+                value={this.state.steps}
+                name="steps"
+                placeholder="Step 1..."
+                onChange={this.handleChange}
+              />
+            </div>
+            {/* <div className="add-input">
             <h3>Step 2, lets hear it!</h3>
             <input
               type="text"
@@ -171,24 +188,24 @@ class NewTutorialForm extends Component {
               onChange={this.handleChange}
             />
           </div> */}
-          <div className="add-input">
-            <h3>
-              Please provide some tags to shine some light on your awesome
-              Tutorial!
-            </h3>
-            <input
-              type="text"
-              value={this.state.tags}
-              name="tags"
-              placeholder="#HowTo"
-              onChange={this.handleChange}
-            />
+            <div className="add-input">
+              <h3>
+                Please provide some tags to shine some light on your awesome
+                Tutorial!
+              </h3>
+              <input
+                type="text"
+                value={this.state.tags}
+                name="tags"
+                placeholder="#HowTo"
+                onChange={this.handleChange}
+              />
+            </div>
+            <button type="submit" onClick={this.handleSubmit}>
+              Add Tutorial
+            </button>
           </div>
-          <button type="submit" onClick={this.handleSubmit}>
-            Add Tutorial
-          </button>
-        </div>
-      </form>
+        </form>
       </StyledForm>
     );
   }

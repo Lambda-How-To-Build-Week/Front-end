@@ -24,14 +24,6 @@ function App() {
 
   return (
     <div className="App">
-      <nav>
-        <div className="nav-links">
-          <Link to="/sign-up">Home</Link>
-          <Link to="/articles">Articles</Link>
-          <Link to="/login"> Log In</Link>
-          <Link to="/new-tutorial">tutorial</Link>
-        </div>
-      </nav>
       <Route exact path="/" component={SignUp} />
       <Route path="/login" component={LogIn} />
       <Route exact path="/edit-tutorial" component={EditItem} />
