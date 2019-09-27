@@ -1,18 +1,21 @@
-*{
-  font-family: 'Lato', sans-serif;
-
+* {
+  font-family: "Lato", sans-serif;
 }
 
-h1,h2,h3,h4{
-  font-family: 'Righteous', cursive;
-
+h1,
+a,
+button,
+h2,
+label,
+h3,
+h4 {
+  font-family: "Righteous", cursive;
 }
-
 
 .App {
   text-align: center;
   height: 80vh;
-  color: #E76E3C;
+  color: #e76e3c;
 }
 
 .App-logo {
@@ -28,39 +31,30 @@ h1,h2,h3,h4{
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.navigation{
-  display:flex;
-  align-items:center;
-  width:100%;
-  padding:20px;
+.nav {
+  font-size: 1.5rem;
 }
-
 .nav-links {
- color:#e76e3c;
+  color: #e76e3c;
 }
 
 .search-form {
-  flex:1;
+  flex: 1;
 }
 
+#data-search-form {
+  margin-left: 15px;
+}
 /* .nav-links a {
   text-decoration: none;
   color: #e76e3c;
   font-weight: bold;
 } */
 
-a{
-  text-decoration:none;
+a {
+  text-decoration: none;
 }
 
-a:hover{
+a:hover {
   color: lightgrey;
 }
-
-
-
-
-
-
-
