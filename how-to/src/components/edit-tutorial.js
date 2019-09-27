@@ -19,7 +19,7 @@ export default function EditItem(props) {
   const handleSubmit = e => {
     e.preventDefault();
     axiosWitAuth()
-      .put(`/api/auth/:user_id/posts/:post_id/${props.match.params.id}`, stuff)
+      .put(`/:user_id/posts/:post_id/${props.match.params.id}`, stuff)
       .then(res => {
         setStuff(editingState);
         props.history.push(`/finished-tutorial`);
