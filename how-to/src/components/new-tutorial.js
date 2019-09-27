@@ -21,12 +21,12 @@ const StyledForm = styled.form`
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
+  }
 
 .nav a{
   padding: 25px;
   color: white;
-
+  font-family: 'Righteous', cursive;
 }
 
 h1, h2{

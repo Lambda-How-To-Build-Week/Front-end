@@ -3,7 +3,7 @@
 
 }
 
-h1,h2,h3,h4{
+h1,h2,h3,h4,p {
   font-family: 'Righteous', cursive;
 
 }
@@ -30,12 +30,8 @@ h1,h2,h3,h4{
 }
 
 
-.nav-links {
- color:#e76e3c;
-}
-
-.search-form {
-  flex:1;
+.nav{
+  font-family: 'Righteous', cursive;
 }
 
 .nav-links a {
@@ -51,6 +47,7 @@ a{
 a:hover{
   color: lightgrey;
 }
+
 
 
 
