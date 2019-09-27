@@ -11,6 +11,8 @@ import {
   TUTORIAL_START
 } from "../actions/index";
 
+import axiosWithAuth from "../../utils/axiosWithAuth";
+
 //REGISTRATION
 
 const initialState = {
