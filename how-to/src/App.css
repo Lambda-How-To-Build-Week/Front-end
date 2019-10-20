@@ -1,5 +1,18 @@
+*{
+  font-family: 'Lato', sans-serif;
+
+}
+
+h1,h2,h3,h4,p {
+  font-family: 'Righteous', cursive;
+
+}
+
+
 .App {
   text-align: center;
+  height: 80vh;
+  color: #E76E3C;
 }
 
 .App-logo {
@@ -7,16 +20,38 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+
+.nav{
+  font-family: 'Righteous', cursive;
 }
+
+.nav-links a {
+  text-decoration: none;
+  color: #e76e3c;
+  font-weight: bold;
+} 
+
+a{
+  text-decoration:none;
+}
+
+a:hover{
+  color: lightgrey;
+}
+
+
+
+
+
+
+
+
