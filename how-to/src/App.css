@@ -1,5 +1,21 @@
+* {
+  font-family: "Lato", sans-serif;
+}
+
+h1,
+a,
+button,
+h2,
+label,
+h3,
+h4 {
+  font-family: "Righteous", cursive;
+}
+
 .App {
   text-align: center;
+  height: 80vh;
+  color: #e76e3c;
 }
 
 .App-logo {
@@ -7,16 +23,38 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.nav {
+  font-size: 1.5rem;
+}
+.nav-links {
+  color: #e76e3c;
+}
 
-.App-link {
-  color: #09d3ac;
+.search-form {
+  flex: 1;
+}
+
+#data-search-form {
+  margin-left: 15px;
+}
+/* .nav-links a {
+  text-decoration: none;
+  color: #e76e3c;
+  font-weight: bold;
+} */
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: lightgrey;
 }
